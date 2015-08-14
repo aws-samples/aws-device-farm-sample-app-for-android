@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation Drawer as suggested by Google Material Design https://www.google.com/design/spec/patterns/navigation-drawer.html -->
+    <dimen name="list_item_height">48dp</dimen>
+    <dimen name="list_item_text_size">16sp</dimen>
+    <dimen name="list_icon_left_margin">16dp</dimen>
+    <dimen name="square_icon_width_height">32dp</dimen>
+    <dimen name="list_icon_left_margin_text">72dp</dimen>
+    <dimen name="header_height">160dp</dimen>
+    <dimen name="drawer_width">260dp</dimen>
+    <dimen name="head_list_separator">16dp</dimen>
+    <color name="list_item_color">#D9000000</color>
+    <color name="list_icon_color">#CC000000</color>
+
+</resources>

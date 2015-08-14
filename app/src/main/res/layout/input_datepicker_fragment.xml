@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <DatePicker
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_datepicker"
+        android:contentDescription="Datepicker Control"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_datepicker"
+        android:text="@string/placeholder"
+        android:textSize="@dimen/large_font_size"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/input_date_display"
+        android:contentDescription="Datepicker Display"/>
+</RelativeLayout>

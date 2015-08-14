@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/toggle_background">
+
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="@string/switch_on_text"
+        android:textOff="@string/switch_off_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:id="@+id/input_switch"
+        />
+    <FrameLayout
+        android:id="@+id/input_switch_display"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/input_switch"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:background="@color/custom_grey"/>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <Button
+        android:layout_marginTop="@dimen/mid_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifications_toast_button"
+        android:text="TOAST"
+        style="@style/ADFButton.Center_Horizontal"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:id="@+id/notifications_alert_button"
+        android:layout_below="@id/notifications_toast_button"
+        style="@style/ADFButton.Center_Horizontal"
+        android:text="ALERT"/>
+</RelativeLayout>

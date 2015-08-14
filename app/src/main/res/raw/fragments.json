@@ -1,0 +1,144 @@
+[
+  {
+    "fragment_id":"HOME",
+    "category_name":"Home",
+    "headline":"Homepage",
+    "icon_name":"store_mall_directory",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"HTTP",
+    "category_name":"Web",
+    "headline":"Web View",
+    "icon_name":"public",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"NATIVE",
+    "category_name":"Native Components",
+    "headline":"Native Components",
+    "icon_name":"photo_camera",
+    "has_tabs":true,
+    "tabs":[
+      { "tab_id":"IMAGE_GALLERY",
+        "tab_name": "Image Collection",
+        "tab_headline":"Image Collection"
+      },
+      { "tab_id":"CONTENT_SCROLLING",
+        "tab_name": "Content Scrolling",
+        "tab_headline":"Content Scrolling"
+      },
+      { "tab_id":"MEDIA_PLAYER",
+        "tab_name": "Video Player",
+        "tab_headline":"Video Player"
+      },
+      { "tab_id":"CAMERA",
+        "tab_name": "Camera",
+        "tab_headline":"Camera"
+      },
+      { "tab_id":"OUT_OF_VIEW",
+        "tab_name": "Content Out of View",
+        "tab_headline":"Content Out of View"
+      }
+    ]
+  },
+  {
+    "fragment_id":"INPUTS",
+    "category_name":"Input Controls",
+    "headline":"Input Controls",
+    "icon_name":"input",
+    "has_tabs":true,
+    "tabs":[
+      { "tab_id":"EDIT_TEXT",
+        "tab_name": "Text Field",
+        "tab_headline":"Text Field"
+      },
+      { "tab_id":"CHECKBOX",
+        "tab_name": "Checkbox",
+        "tab_headline":"Checkbox"
+      },
+      { "tab_id":"RADIO_BUTTON",
+        "tab_name": "Radio Buttons",
+        "tab_headline":"Radio Buttons"
+      },
+      { "tab_id":"TOGGLE_BUTTON",
+        "tab_name": "Toggle Button",
+        "tab_headline":"Toggle Button"
+      },
+      { "tab_id":"SPINNER",
+        "tab_name": "Spinner",
+        "tab_headline":"Spinner"
+      },
+      { "tab_id":"REFRESH",
+        "tab_name": "Pull To Refresh",
+        "tab_headline":"Pull To Refresh"
+      },
+      { "tab_id":"TIME_PICKER",
+        "tab_name": "Time Picker",
+        "tab_headline":"Time Picker"
+      },
+      { "tab_id":"DATE_PICKER",
+        "tab_name": "Date Picker",
+        "tab_headline":"Date Picker"
+      },
+      { "tab_id":"SUBMIT_BUTTON",
+        "tab_name": "Submit Button",
+        "tab_headline":"Spinner"
+      },
+      { "tab_id":"GESTURES",
+        "tab_name": "Gestures",
+        "tab_headline":"Gestures"
+      }
+    ]
+  },
+  {
+    "fragment_id":"NESTED",
+    "category_name":"Nested Views",
+    "headline":"Nested Views",
+    "icon_name":"filter_1",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"CRASH",
+    "category_name":"Crash/Bug",
+    "headline":"Crash/Bug Simulator",
+    "icon_name":"bug_report",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"ALERT",
+    "category_name":"Alerts",
+    "headline":"Alerts and Dialogs",
+    "icon_name":"feedback",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"LOGIN",
+    "category_name":"Login Page",
+    "headline":"Login Page",
+    "icon_name":"account_box",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"LOCAL_WEB_VIEW",
+    "category_name":"Local Web View",
+    "headline":"Local Web View",
+    "icon_name":"http",
+    "has_tabs":false,
+    "tabs":[]
+  },
+  {
+    "fragment_id":"FIXTURES",
+    "category_name":"Fixtures",
+    "headline":"Fixtures",
+    "icon_name":"settings",
+    "has_tabs":false,
+    "tabs":[]
+  }
+]

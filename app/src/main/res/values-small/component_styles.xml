@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ADFHeadLine">
+        <item name="android:text">@string/placeholder</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="ADFXLHeadline" parent="ADFHeadLine">
+        <item name="android:textSize">@dimen/xl_font_size</item>
+    </style>
+
+    <style name="ADFLargeHeadline" parent="ADFHeadLine">
+        <item name="android:textSize">@dimen/large_font_size</item>
+    </style>
+
+    <style name="ADFMidHeadLine" parent="ADFHeadLine">
+        <item name="android:textSize">@dimen/mid_font_size</item>
+    </style>
+
+    <style name="ADFSmallHeadLine" parent="ADFHeadLine">
+        <item name="android:textSize">@dimen/small_font_size</item>
+    </style>
+
+    <style name="textField">
+        <item name="android:text">@string/placeholder</item>
+        <item name="android:textSize">@dimen/mid_font_size</item>
+        <item name="android:layout_marginRight">@dimen/small_margin</item>
+    </style>
+
+
+
+    <style name="ADFButton" >
+        <item name="android:minWidth">50dp</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:background">@color/custom_dark_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="ADFButton.EXT" parent="ADFButton">
+
+    </style>
+
+    <style name="ADFButton.Center_Horizontal" parent="ADFButton.EXT">
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+
+
+    <dimen name="large_margin">44dp</dimen>
+    <dimen name="mid_margin">22dp</dimen>
+    <dimen name="small_margin">11dp</dimen>
+
+    <dimen name="xl_font_size">21sp</dimen>
+    <dimen name="large_font_size">15sp</dimen>
+    <dimen name="mid_font_size">12sp</dimen>
+    <dimen name="small_font_size">10sp</dimen>
+    <dimen name="Large_button_height">30dp</dimen>
+
+    <dimen name="adf_logo">120dp</dimen>
+    <dimen name="out_of_view_scroll_size">500dp</dimen>
+    <dimen name="gesture_scroll_output_size">100dp</dimen>
+
+
+</resources>

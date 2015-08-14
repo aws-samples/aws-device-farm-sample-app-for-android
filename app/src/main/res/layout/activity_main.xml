@@ -1,0 +1,41 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_toolbar"
+            android:orientation="vertical">
+            
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"/>
+        </LinearLayout>
+        
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:id="@+id/container_body"
+            android:layout_weight="1">
+        </FrameLayout>
+    </LinearLayout>
+    
+    <fragment
+        android:name="com.amazonaws.devicefarm.android.referenceapp.Fragments.NavigationDrawerFragment"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|left"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer"
+        android:id="@+id/navigation_drawer_fragment"/>
+</android.support.v4.widget.DrawerLayout>

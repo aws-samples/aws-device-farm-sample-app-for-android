@@ -1,0 +1,45 @@
+<!--
+    Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License").
+    You may not use this file except in compliance with the License.
+    A copy of the License is located at
+
+    http://aws.amazon.com/apache2.0
+
+    or in the "license" file accompanying this file. This file is distributed
+    on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+    express or implied. See the License for the specific language governing
+    permissions and limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script src= "angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="controller">
+
+<div class="form-group">
+	<label for="first-name-form">First Name:</label>
+	<input class="form-control" type="text" ng-model="firstName" id="first-name-form">
+	<label for="last-name-form">Last Name:</label>
+	<input class="form-control" type="text" ng-model="lastName" id="last-name-form">
+</div>
+<br>
+<h3>Hello!<div id="full_name">{{firstName + " " + lastName}}</div></h3>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('controller', function($scope) {
+	$scope.firstName = "Seattle";
+	$scope.lastName = "Washington";
+});
+</script>
+
+</body>
+</html>
+

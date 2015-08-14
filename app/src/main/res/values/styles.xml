@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="ADFMaterialTheme" parent="ADFMaterialTheme.Base">
+
+    </style>
+
+    <style name="ADFMaterialTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">@color/custom_orange</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/custom_darker_orange</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/custom_blue</item>
+
+        <item name="android:spinnerDropDownItemStyle">
+            @style/ADFSpinnerDropDownStyle
+        </item>
+        <item name="android:spinnerItemStyle">
+            @style/ADFSpinnerItemStyle
+        </item>
+    </style>
+
+    <style name="ADFSpinnerItemStyle">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/mid_font_size</item>
+    </style>
+    <style name="ADFSpinnerDropDownStyle">
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">@dimen/large_font_size</item>
+    </style>
+
+</resources>

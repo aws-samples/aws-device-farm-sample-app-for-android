@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/input_edit_text"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_margin="@dimen/mid_margin"
+        android:hint="@string/enter_text_hint"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:contentDescription="Text Input Control"/>
+</RelativeLayout>

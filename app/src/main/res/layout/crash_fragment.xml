@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:text="@string/crash_headline"
+        style="@style/ADFLargeHeadline"
+        android:id="@+id/bug_fragment_message"
+        android:contentDescription="Crash Display"/>
+    <Button
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/crash_button"
+        android:layout_below="@id/bug_fragment_message"
+        android:text="@string/crash_button"
+        style="@style/ADFButton.Center_Horizontal"
+        android:contentDescription="Crash Button"
+        />
+</RelativeLayout>

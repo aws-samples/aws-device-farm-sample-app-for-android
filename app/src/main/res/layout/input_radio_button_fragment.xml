@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radio_button_group"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/mid_margin">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_1"
+            android:id="@+id/radio_button_1"
+            android:checked="true"
+            android:contentDescription="Radio Button 1"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_2"
+            android:id="@+id/radio_button_2"
+            android:contentDescription="Radio Button 2"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_button_3"
+            android:id="@+id/radio_button_3"
+            android:contentDescription="Radio Button 3"/>
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:layout_below="@id/radio_button_group"
+        android:text="@string/placeholder"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/large_font_size"
+        android:id="@+id/input_radio_button_display"
+        android:contentDescription="Radio Button Display"/>
+</RelativeLayout>

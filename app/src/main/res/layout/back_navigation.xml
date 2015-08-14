@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        style="@style/ADFLargeHeadline"
+        android:text="@string/back_navigation_message"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:id="@+id/back_navigation_counter"
+        android:contentDescription="Level Display"/>
+    <Button
+        android:layout_below="@id/back_navigation_counter"
+        android:id="@+id/back_navigation_next_button"
+        android:layout_margin = "@dimen/large_margin"
+        style="@style/ADFButton.Center_Horizontal"
+        android:text="@string/nested_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Next Level Button"/>
+</RelativeLayout>

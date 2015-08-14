@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context="com.amazonaws.devicefarm.android.referenceapp.Fragments.homepage">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mid_margin"
+        style="@style/ADFLargeHeadline"
+        android:textStyle="bold"
+        android:text="@string/adf_homepage_headline"
+        android:contentDescription="@string/adf_homepage_headline_content_description"
+        android:id="@+id/homepage_headline"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mid_margin"
+        style="@style/ADFMidHeadLine"
+        android:text="@string/adf_homepage_subtitle"
+        android:contentDescription="@string/adf_homepage_subheader_content_description"
+        android:id="@+id/homepage_subheadline"/>
+</LinearLayout>

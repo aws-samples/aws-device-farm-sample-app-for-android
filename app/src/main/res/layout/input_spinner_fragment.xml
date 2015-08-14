@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_spinner_message"
+        android:layout_marginTop="@dimen/mid_margin"
+        style="@style/ADFMidHeadLine"
+        android:contentDescription="Spinner Display"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/input_spinner"
+        android:layout_marginTop="@dimen/mid_margin"
+        android:entries="@array/spinner_array"
+        android:layout_below="@id/input_spinner_message"
+        android:prompt="@string/spinner_message"
+        android:contentDescription="Spinner Control"/>
+</RelativeLayout>

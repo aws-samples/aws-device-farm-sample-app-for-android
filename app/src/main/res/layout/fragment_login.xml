@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:id="@+id/login_main_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <EditText
+                android:layout_margin="@dimen/small_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:capitalize="none"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions|textVisiblePassword"
+                android:hint="@string/username_hint"
+                android:id="@+id/username_text_input"
+                android:contentDescription="Username Input Field">
+            </EditText>
+            <EditText
+                android:layout_below="@+id/username_text_input"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:layout_width="fill_parent"
+                android:id="@+id/password_text_input"
+                android:layout_gravity="center_horizontal"
+                android:capitalize="none"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:hint="@string/password_hint"
+                android:contentDescription="Password Input Field"/>
+
+            <Button
+                android:layout_below="@+id/password_text_input"
+                android:layout_margin="@dimen/small_margin"
+                style="@style/ADFButton"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Large_button_height"
+                android:id="@+id/login_button"
+                android:textSize="@dimen/small_font_size"
+                android:text="@string/login_button_title"
+                android:contentDescription="Login Button"/>
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/login_alt_view"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/login_alt_message_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            style="@style/ADFLargeHeadline"
+            android:textStyle="bold"
+            android:text="@string/placeholder"
+            android:contentDescription="Alt Message"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/small_margin"
+            style="@style/ADFButton.Center_Horizontal"
+            android:layout_height="@dimen/Large_button_height"
+            android:layout_below="@+id/login_alt_message_textView"
+            android:id="@+id/alt_button"
+            android:text="@string/placeholder"
+            android:contentDescription="Alt Button"/>
+    </RelativeLayout>
+</FrameLayout>

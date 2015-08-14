@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/gestures_headline"
+        style="@style/ADFSmallHeadLine"
+        android:id="@+id/input_gesture_headline"
+        android:textSize="@dimen/mid_font_size"/>
+    <ScrollView
+        android:id="@+id/input_gesture_scroll_display"
+        android:layout_margin="@dimen/mid_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gesture_scroll_output_size"
+        android:layout_below="@id/input_gesture_headline"
+        android:scrollbars="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/input_gesture_content"
+            android:contentDescription="Gestures Display"/>
+    </ScrollView>
+    <FrameLayout
+        android:layout_below="@id/input_gesture_scroll_display"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:id="@+id/input_gesture_action_pad"
+        android:background="@color/custom_blue"
+        android:contentDescription="Gesture Action Pad">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swipe here"
+            android:layout_gravity="center"
+            android:textSize="@dimen/large_font_size"/>
+    </FrameLayout>
+</RelativeLayout>
