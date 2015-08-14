@@ -37,19 +37,19 @@ In order to run this app within Device Farm you can either use the [preassembled
 ## Strategies for Testing Inputs
 
 |Component |Android Implementation| Espresso| Calabash | Appium |
-|--------------|---------|----------|--------|--|
-|[Checkbox](http://developer.android.com/reference/android/widget/CheckBox.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[DatePicker](http://developer.android.com/reference/android/widget/DatePicker.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[EditText](http://developer.android.com/reference/android/widget/EditText.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[Gestures Input](http://developer.android.com/training/gestures/index.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[Pull to Refresh](https://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[Radio Buttons](http://developer.android.com/guide/topics/ui/controls/radiobutton.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[TimePicker](http://developer.android.com/reference/android/widget/TimePicker.html)|[source code]()|[source code]()|[source code]()|[source code]()
-|[Toggle Button](http://developer.android.com/guide/topics/ui/controls/togglebutton.html)|[source code]()|[source code]()|[source code]()|[source code]()
+|----------|----------------------|----------|----------|--------|
+|[Checkbox](http://developer.android.com/reference/android/widget/CheckBox.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[DatePicker](http://developer.android.com/reference/android/widget/DatePicker.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[EditText](http://developer.android.com/reference/android/widget/EditText.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[Gestures Input](http://developer.android.com/training/gestures/index.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[Pull to Refresh](https://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[Radio Buttons](http://developer.android.com/guide/topics/ui/controls/radiobutton.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[TimePicker](http://developer.android.com/reference/android/widget/TimePicker.html)|[source code]()|[source code]()|[source code]()|[source code]()|
+|[Toggle Button](http://developer.android.com/guide/topics/ui/controls/togglebutton.html)|[source code]()|[source code]()|[source code]()|[source code]()|
 
 ## Strategies for Automated Navigation
 |Component |Android Implementation| Espresso| Calabash | Appium |
-|--------------|---------|----------|--------|----|
+|----------|----------------------|----------|----------|--------|
 |[Navigation Drawer](https://developer.android.com/training/implementing-navigation/nav-drawer.html)|[source code]()|[source code]()|[source code]()|[source code]()|
 |[ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html)|[source code]()|[source code]()|[source code]()|[source code]()|
 
