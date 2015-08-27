@@ -79,7 +79,7 @@ Enter the following command inside the command prompt to build the project and t
 gradlew.bat cC
 ```
 
-#### Step 2: Find the APKS
+#### Step 3: Find the APKS
 <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/find-apk.gif" width="400">
 
 The app APK is called **app-debug.apk** and the test apk is **app-debug-androidTest-unaligned.apk**.
