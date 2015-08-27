@@ -40,15 +40,6 @@ public class FixturesTest extends BaseADFTest {
     }
 
     /**
-     * Tests to see if the default latitude and longitude is displayed
-     */
-    @Test
-    public void testDefaultLocation(){
-        checkIfIdIsDisplayedWithText(R.id.lat, "47.6204");
-        checkIfIdIsDisplayedWithText(R.id.longitude, "-122.3491");
-    }
-
-    /**
      * Tests if the wifi is on
      */
     @Test
@@ -73,7 +64,7 @@ public class FixturesTest extends BaseADFTest {
     }
 
     /**
-     * Tests if the nfc is on
+     * Tests if the nfc is on. Fails on devices with no nfc support
      */
     @Test
     public void testNfcOn() {
