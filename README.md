@@ -1,13 +1,11 @@
-# Device Farm Sample App for Android
-This is a sample native Android app that contains many of the stock Android components and elements. Example [Appium](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app), [Calabash](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app), and [Espresso](https://github.com/awslabs/aws-device-farm-sample-app-for-android#strategies-for-espresso) tests have been written for this app. 
-
-Please use this app and example tests as a reference for your own Device Farm test scripts.
+# AWS Device Farm Sample App for Android
+This is a sample native Android app that contains many of the stock Android components and elements, along with example [Appium](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app), [Calabash](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app), and [Espresso](https://github.com/awslabs/aws-device-farm-sample-app-for-android#strategies-for-espresso) tests. You can use the app and example tests as a reference for your own AWS Device Farm test scripts.
 
 #### Notes
 This project uses [Butterknife](http://jakewharton.github.io/butterknife/) in order to create Android views and view listeners through annotations.
 
 ## Getting Started
-In order to run this app within Device Farm you will need to [open](https://github.com/dogriffiths/HeadFirstAndroid/wiki/How-to-open-a-project-in-Android-Studio) and [build](https://developer.android.com/training/basics/firstapp/index.html) the APK from the source.
+In order to run this app on Device Farm, you will first need to create a local copy of this repository, [open](https://github.com/dogriffiths/HeadFirstAndroid/wiki/How-to-open-a-project-in-Android-Studio) the project, and then [build](https://developer.android.com/training/basics/firstapp/index.html) the APK from the source.
 
 ## Examples for Testing Specific Scenarios
 |Component |App Implementation| Espresso | Calabash | Appium |
