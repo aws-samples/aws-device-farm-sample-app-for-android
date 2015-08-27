@@ -64,7 +64,7 @@ public class FixturesTest extends BaseADFTest {
     }
 
     /**
-     * Tests if the nfc is on
+     * Tests if the nfc is on. Fails on devices with no nfc support
      */
     @Test
     public void testNfcOn() {

@@ -35,7 +35,7 @@ public class CameraPreviewTest extends NativeBase {
 
     /**
      * Tests a camera preview by checking if it's element's content description
-     * indicates that it's on.
+     * indicates that it's on. Fails on devices with no camera support.
      */
     @Test
     public void testCheckIfCameraOn() {
