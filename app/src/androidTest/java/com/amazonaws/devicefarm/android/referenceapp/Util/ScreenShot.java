@@ -40,7 +40,7 @@ public class ScreenShot {
 
     public static void take(Activity activity){
 
-        final String path = Environment.getExternalStorageDirectory().getAbsolutePath() + DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY + UUID.randomUUID().toString();;
+        final String path = Environment.getExternalStorageDirectory().getAbsolutePath() + DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY + UUID.randomUUID().toString() + ".png";;
         Log.i(TAG, "Saving to path: " +  path);
 
         View phoneView = activity.getWindow().getDecorView().getRootView();
