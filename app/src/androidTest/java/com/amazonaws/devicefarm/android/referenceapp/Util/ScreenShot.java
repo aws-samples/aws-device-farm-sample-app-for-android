@@ -32,7 +32,7 @@ import java.util.UUID;
  * Screenshot taker for Espresso tests within AWS Device Farm
  *
  * Saves the image with the specified name (or a randomly generated one) and
- * saves it into a directory Device Farm will pull from when generating reports
+ * saves it into a directory Device Farm will pull from when generating reports.
  */
 public class ScreenShot {
     private static final String TAG = "SCREENSHOT";
@@ -40,25 +40,26 @@ public class ScreenShot {
     private static final int SCREEN_SHOT_IMAGE_QUALITY = 100;
 
     public static void take(Activity activity, String fileName) {
-        // Create the directory path
-        final StringBuilder pathBuilder = new StringBuilder();
-        pathBuilder.append(Environment.getExternalStorageDirectory().getAbsolutePath());
-        pathBuilder.append(DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY);
+        // Create the file path.
+        final StringBuilder pathBuilder = new StringBuilder()
+            .append(Environment.getExternalStorageDirectory().getAbsolutePath())
+            .append(DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY)
+            .append(fileName)
+            .append(".png");
 
-        // Verify that the directory exists and create it if not
-        File directoryPath = new File(pathBuilder.toString());
+        File imageFile = new File(pathBuilder.toString());
+
+        // Verify that the directory exists and create it if not.
+        File directoryPath = imageFile.getParentFile();
         if (!directoryPath.isDirectory()) {
-            Log.i(TAG, "Creating directory: " + directoryPath);
-            directoryPath.mkdirs();
+            Log.i(TAG, "Creating directory: " + directoryPath.toString());
+            if (!directoryPath.mkdirs()) {
+                Log.e(TAG, "Failed to create the directory");
+                return;
+            }
         }
 
-        // Build the full file path
-        pathBuilder.append(fileName);
-        pathBuilder.append(".png");
-
-        final String path = pathBuilder.toString();
-
-        Log.i(TAG, "Saving to path: " + path);
+        Log.i(TAG, "Saving to path: " + imageFile.toString());
 
         View phoneView = activity.getWindow().getDecorView().getRootView();
         phoneView.setDrawingCacheEnabled(true);
@@ -67,22 +68,13 @@ public class ScreenShot {
 
         OutputStream out = null;
 
-        File imageFile = new File(path);
-
         try {
             out = new FileOutputStream(imageFile);
             bitmap.compress(Bitmap.CompressFormat.PNG, SCREEN_SHOT_IMAGE_QUALITY, out);
             out.flush();
-        }
-
-        catch (FileNotFoundException e) {
+        } catch (IOException e) {
             Log.e(TAG, e.toString());
-        }
-        catch (IOException e) {
-            Log.e(TAG, e.toString());
-        }
-
-        finally {
+        } finally {
             try {
                 if (out != null) {
                     out.close();
