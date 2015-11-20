@@ -29,19 +29,37 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 /**
- * Screenshot taker for Espresso tests within Device Farm
+ * Screenshot taker for Espresso tests within AWS Device Farm
  *
- * Assigns a random file name to the image and saves it into a specific device farm directory
+ * Saves the image with the specified name (or a randomly generated one) and
+ * saves it into a directory Device Farm will pull from when generating reports.
  */
 public class ScreenShot {
     private static final String TAG = "SCREENSHOT";
     private static final String DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY = "/test-screenshots/";
     private static final int SCREEN_SHOT_IMAGE_QUALITY = 100;
 
-    public static void take(Activity activity){
+    public static void take(Activity activity, String fileName) {
+        // Create the file path.
+        final StringBuilder pathBuilder = new StringBuilder()
+            .append(Environment.getExternalStorageDirectory().getAbsolutePath())
+            .append(DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY)
+            .append(fileName)
+            .append(".png");
 
-        final String path = Environment.getExternalStorageDirectory().getAbsolutePath() + DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY + UUID.randomUUID().toString();;
-        Log.i(TAG, "Saving to path: " +  path);
+        File imageFile = new File(pathBuilder.toString());
+
+        // Verify that the directory exists and create it if not.
+        File directoryPath = imageFile.getParentFile();
+        if (!directoryPath.isDirectory()) {
+            Log.i(TAG, "Creating directory: " + directoryPath.toString());
+            if (!directoryPath.mkdirs()) {
+                Log.e(TAG, "Failed to create the directory");
+                return;
+            }
+        }
+
+        Log.i(TAG, "Saving to path: " + imageFile.toString());
 
         View phoneView = activity.getWindow().getDecorView().getRootView();
         phoneView.setDrawingCacheEnabled(true);
@@ -50,22 +68,13 @@ public class ScreenShot {
 
         OutputStream out = null;
 
-        File imageFile = new File(path);
-
         try {
             out = new FileOutputStream(imageFile);
             bitmap.compress(Bitmap.CompressFormat.PNG, SCREEN_SHOT_IMAGE_QUALITY, out);
             out.flush();
-        }
-
-        catch (FileNotFoundException e) {
+        } catch (IOException e) {
             Log.e(TAG, e.toString());
-        }
-        catch (IOException e) {
-            Log.e(TAG, e.toString());
-        }
-
-        finally {
+        } finally {
             try {
                 if (out != null) {
                     out.close();
@@ -74,5 +83,9 @@ public class ScreenShot {
                 Log.e(TAG, e.toString());
             }
         }
+    }
+
+    public static void take(Activity activity) {
+        take(activity, UUID.randomUUID().toString());
     }
 }
