@@ -36,6 +36,8 @@ import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Inputs.Input
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Native.Native_CameraFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Native.Native_ImageGalleryFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Native.Native_MediaPlayer;
+import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.SupplementalUploads.SupplementalUploads_AdditionalAppFragment;
+import com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.SupplementalUploads.SupplementalUploads_ExtraDataFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.WebViewFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.crashFragment;
 import com.amazonaws.devicefarm.android.referenceapp.R;
@@ -72,7 +74,12 @@ public enum FragmentEnum {
     CAMERA(new Native_CameraFragment()),
     OUT_OF_VIEW(createSimpleFragment(R.layout.native_out_of_view_scrolling)),
     FIXTURES(new FixturesFragment()),
-    LOCAL_WEB_VIEW(new LocalWebView());
+    LOCAL_WEB_VIEW(new LocalWebView()),
+
+    //tabs for supplemental uploads
+    SUPPLEMENTAL_UPLOADS(null),
+    EXTRA_DATA(new SupplementalUploads_ExtraDataFragment()),
+    ADDITIONAL_APP(new SupplementalUploads_AdditionalAppFragment());
 
     private final Fragment fragment;
 
