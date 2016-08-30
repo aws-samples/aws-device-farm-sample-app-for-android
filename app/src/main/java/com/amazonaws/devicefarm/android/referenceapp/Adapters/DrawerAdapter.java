@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.devicefarm.android.referenceapp.Adapaters;
+package com.amazonaws.devicefarm.android.referenceapp.Adapters;
 
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.devicefarm.android.referenceapp.Adapaters;
+package com.amazonaws.devicefarm.android.referenceapp.Adapters;
 
 
 import android.support.v4.app.Fragment;
