@@ -22,7 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.amazonaws.devicefarm.android.referenceapp.Adapaters.TabAdapter;
+import com.amazonaws.devicefarm.android.referenceapp.Adapters.TabAdapter;
 import com.amazonaws.devicefarm.android.referenceapp.Models.TabViewModel;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 

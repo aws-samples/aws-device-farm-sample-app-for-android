@@ -22,7 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-import com.amazonaws.devicefarm.android.referenceapp.Adapaters.ImageGalleryAdapter;
+import com.amazonaws.devicefarm.android.referenceapp.Adapters.ImageGalleryAdapter;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;

@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.amazonaws.devicefarm.android.referenceapp.Adapaters.GestureListener;
+import com.amazonaws.devicefarm.android.referenceapp.Adapters.GestureListener;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
