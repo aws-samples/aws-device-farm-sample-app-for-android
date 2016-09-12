@@ -26,7 +26,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.amazonaws.devicefarm.android.referenceapp.Adapaters.DrawerAdapter;
+import com.amazonaws.devicefarm.android.referenceapp.Adapters.DrawerAdapter;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.NavigationDrawerFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.TabFragmentContainer;
 import com.amazonaws.devicefarm.android.referenceapp.Models.DrawerCategoryModel;

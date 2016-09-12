@@ -140,5 +140,22 @@
     "icon_name":"settings",
     "has_tabs":false,
     "tabs":[]
+  },
+  {
+    "fragment_id":"SUPPLEMENTAL_UPLOADS",
+    "category_name":"Supplemental Uploads",
+    "headline":"Supplemental Uploads",
+    "icon_name":"folder",
+    "has_tabs":true,
+    "tabs":[
+      { "tab_id":"EXTRA_DATA",
+        "tab_name": "Extra Data",
+        "tab_headline":"Extra Data"
+      },
+      { "tab_id":"ADDITIONAL_APP",
+        "tab_name": "Additional App",
+        "tab_headline":"Additional App"
+      }
+    ]
   }
 ]
