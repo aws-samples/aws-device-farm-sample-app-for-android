@@ -119,29 +119,38 @@ Examples of custom Matchers used within the Espresso tests:
    * Click Ok. This will open up the emulator where gradle will launch the app in the emulator. In addition it will open up a "Record your Test" window. </br>
 4. We will record a test for alert functionality within the app.
    * On the app running on emulator click on Menu button —> Alerts. You will notice that the recorder window records the UI interactions as shown below. </br>
-  <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/tree/master/readme_images/recorder-ui-interactions.png" width=1000 />
+   
+     <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/recorder-ui-interactions.png" width=375 height=500/>
+     
    * We will add an assertion to check for the presence of "Alert" button on the page. In the "Record your Test" window click on "Add Assertion". This will expand the Recorder window with a snapshot of the app running in the emulator as shown below. </br>
-  <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/tree/master/readme_images/assertion-view.png" width=1000 />
+   
+     <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/assertion-view.png" width=600 height=500 />
+     
    * Select "Alert" button in the recorder window. This will auto populate the id of Alert button in the edit assertion section as shown below. Keep the assertion selection to default "exists" as click on Save Assertion. </br>
-  <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/tree/master/readme_images/recorder-save-assertion.png" width=1000 />
+     <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/recorder-save-assertion.png" width=600 height=500 />
+     
    * After you click on Ok in the recorder window it will ask for a test class name under which your recorded test will be stored. Enter MyAlertTest. This will generate the test code and save it under MyAlertTest.java which you can view in the project explorer.
 5. Now we want to run the recorded tests locally. To do this we first want a configuration that will run Android Instrumented Tests.
    * Go to Run —> Edit Configurations.
    * Click on '+' sign on the left hand top corner and select "Android Instrumented Tests" as shown below. </br>
-  <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/tree/master/readme_images/edit-configuration.png" width=1000 />
+   
+     <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/edit-configuration.png" width=625 height=500 />
+     
    * Name the configuration as "MyTestConfig". For the Class we provide the name of the class "MyAlertTest" under which we saved our tests. A completed configuration will look like below. Click Ok to save the configuration. </br>
-  <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/tree/master/readme_images/completed-configuration.png" width=1000 />
+   
+     <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/completed-configuration.png" width=625 height=500 />
+  
 6. Run the tests by selecting "MyTestConfig" as the configuration and clicking on play. This will invoke the emulator and run your tests.
 7. We now want to build the app and tests apks so that you can run them on AWS Device Farm on multiple devices in parallel.
-  * Open your terminal/command prompt and change your directory to your project folder.
-  * For Mac/Linux run the following command inside the terminal prompt to build the project and test apks. This will run all the tests under the project on a connected device. Make sure you have at least one or emulator device connected.
+   * Open your terminal/command prompt and change your directory to your project folder.
+   * For Mac/Linux run the following command inside the terminal prompt to build the project and test apks. This will run all the tests under the project on a connected device. Make sure you have at least one or emulator device connected.
   ```
   ./gradlew cC
   ```
-  * For Windows run the following command inside the terminal prompt to build the project and test apks. This will run all the tests under the project on a connected device. Make sure you have at least one or emulator device connected.
+   * For Windows run the following command inside the terminal prompt to build the project and test apks. This will run all the tests under the project on a connected device. Make sure you have at least one or emulator device connected.
   ```
   gradlew.bat cC
   ```
-  * The app and test apks will now be present under <br/>
+   * The app and test apks will now be present under <br/>
    aws-device-farm-sample-app-for-android/app/build/outputs/apk
 8.  We can upload the app and test apks to AWS Device Farm as Instrumentation tests and run them against hundreds of devices in parallel.
