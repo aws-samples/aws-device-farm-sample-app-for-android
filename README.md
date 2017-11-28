@@ -153,4 +153,4 @@ Examples of custom Matchers used within the Espresso tests:
   ```
    * The app and test apks will now be present under <br/>
    aws-device-farm-sample-app-for-android/app/build/outputs/apk
-8.  We can upload the app and test apks to AWS Device Farm as Instrumentation tests and run them against hundreds of devices in parallel.
+8.  We can upload the app and test apks to AWS Device Farm as Instrumentation tests and run them against hundreds of devices in parallel. The pre-built app and tests can be found [here](https://s3.console.aws.amazon.com/s3/buckets/prebuiltappsreinvent2017/).
