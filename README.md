@@ -126,7 +126,7 @@ Examples of custom Matchers used within the Espresso tests:
    
      <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/assertion-view.png" width=600 height=500 />
      
-   * Select "Alert" button in the recorder window. This will auto populate the id of Alert button in the edit assertion section as shown below. Keep the assertion selection to default "exists" as click on Save Assertion. </br>
+   * Select "Alert" button in the recorder window. This will auto populate the id of Alert button in the edit assertion section as shown below. Keep the assertion selection to default "exists" and click on Save Assertion. </br>
      <img src="https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/readme_images/recorder-save-assertion.png" width=600 height=500 />
      
    * After you click on Ok in the recorder window it will ask for a test class name under which your recorded test will be stored. Enter MyAlertTest. This will generate the test code and save it under MyAlertTest.java which you can view in the project explorer.
