@@ -27,8 +27,8 @@ import android.widget.VideoView;
 
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * A fragment that demonstrates playing a media file
@@ -36,7 +36,7 @@ import butterknife.InjectView;
 public class Native_MediaPlayer extends Fragment{
     private String movieUri;
 
-    @InjectView(R.id.native_video_player)
+    @BindView(R.id.native_video_player)
     VideoView videoView;
 
     MediaPlayer player;
@@ -44,7 +44,7 @@ public class Native_MediaPlayer extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.native_mediaplayer_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         movieUri = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.movie;
         new BackgroundVideoTask().execute(movieUri);
         return view;

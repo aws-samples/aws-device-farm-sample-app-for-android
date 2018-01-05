@@ -37,8 +37,8 @@ import com.amazonaws.devicefarm.android.referenceapp.Util.JsonParser;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * <h1>Main acitivity</h1>
@@ -49,13 +49,13 @@ import butterknife.InjectView;
  * </p>
  */
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemClickListener{
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @InjectView(R.id.toolbar_title)
+    @BindView(R.id.toolbar_title)
     TextView toolbarTitle;
 
-    @InjectView(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
     /**
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         generateDataModel();
         setUpToolBar();
         setUpNavigationDrawer();

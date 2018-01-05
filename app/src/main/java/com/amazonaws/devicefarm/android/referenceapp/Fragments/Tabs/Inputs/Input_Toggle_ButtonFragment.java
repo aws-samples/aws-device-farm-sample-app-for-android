@@ -24,21 +24,21 @@ import android.view.ViewGroup;
 
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
  * A fragment demonstrating the toggle button
  */
 public class Input_Toggle_ButtonFragment extends Fragment {
-    @InjectView(R.id.input_switch_display)
+    @BindView(R.id.input_switch_display)
     View switchDisplay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_toggle_button_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         switchDisplay.setBackgroundColor(getResources().getColor(R.color.custom_grey));
         switchDisplay.setContentDescription("OFF");
         return view;

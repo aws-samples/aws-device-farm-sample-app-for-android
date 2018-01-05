@@ -35,8 +35,8 @@ import com.amazonaws.devicefarm.android.referenceapp.Util.Util;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnEditorAction;
 
 /**
@@ -44,10 +44,10 @@ import butterknife.OnEditorAction;
  */
 public class WebViewFragment extends Fragment {
 
-    @InjectView(R.id.website_input)
+    @BindView(R.id.website_input)
     EditText websiteInput;
 
-    @InjectView(R.id.webView_browser)
+    @BindView(R.id.webView_browser)
     WebView webView;
 
     private boolean isError;
@@ -57,7 +57,7 @@ public class WebViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.web_fragment,container,false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         isError = false;
         //Needed in order to run within appium
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)

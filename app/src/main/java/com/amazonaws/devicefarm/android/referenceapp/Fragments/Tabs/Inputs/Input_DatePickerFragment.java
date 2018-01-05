@@ -25,23 +25,23 @@ import android.widget.TextView;
 
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Fragment which represents datepicker input
  */
 public class Input_DatePickerFragment extends Fragment implements DatePicker.OnDateChangedListener{
-    @InjectView(R.id.input_datepicker)
+    @BindView(R.id.input_datepicker)
     DatePicker datePicker;
 
-    @InjectView(R.id.input_date_display)
+    @BindView(R.id.input_date_display)
     TextView timeDisplay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_datepicker_fragment, container, false);
-        ButterKnife.inject(this,view);
+        ButterKnife.bind(this,view);
         datePicker.init(1994,6,5,this);
         changeDisplay(datePicker.getYear(),datePicker.getMonth(),datePicker.getDayOfMonth());
         return view;
