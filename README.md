@@ -143,6 +143,7 @@ Examples of custom Matchers used within the Espresso tests:
 6. Run the tests by selecting "MyTestConfig" as the configuration and clicking on play. This will invoke the emulator and run your tests.
 7. We now want to build the app and tests apks so that you can run them on AWS Device Farm on multiple devices in parallel.
    * Open your terminal/command prompt and change your directory to your project folder.
+   * Set JAVA_HOME to Java home on your machine.
    * For Mac/Linux run the following command inside the terminal prompt to build the project and test apks. This will run all the tests under the project on a connected device. Make sure you have at least one or emulator device connected.
   ```
   ./gradlew cC
