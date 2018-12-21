@@ -29,8 +29,8 @@ import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * <h1>Navigation Drawer Adapter</h1>
@@ -56,13 +56,13 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         protected int viewType;
 
-        @InjectView(R.id.drawer_row_icon) ImageView rowImage;
-        @InjectView(R.id.drawer_row_title) TextView rowTitle;
+        @BindView(R.id.drawer_row_icon) ImageView rowImage;
+        @BindView(R.id.drawer_row_title) TextView rowTitle;
 
         public ViewHolder(View itemView, int viewType) {
             super(itemView);
             this.viewType = viewType;
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 

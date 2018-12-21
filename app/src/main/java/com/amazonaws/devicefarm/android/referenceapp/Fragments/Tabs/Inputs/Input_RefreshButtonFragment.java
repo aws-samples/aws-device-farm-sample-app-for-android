@@ -30,24 +30,24 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * A fragment representing a refresh input
  */
 public class Input_RefreshButtonFragment extends android.support.v4.app.Fragment implements
         SwipeRefreshLayout.OnRefreshListener{
-    @InjectView(R.id.input_refresh)
+    @BindView(R.id.input_refresh)
     SwipeRefreshLayout swipeRefreshLayout;
 
-    @InjectView(R.id.input_refresh_display)
+    @BindView(R.id.input_refresh_display)
     TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_refresh_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         swipeRefreshLayout.setOnRefreshListener(this);
         return view;
     }

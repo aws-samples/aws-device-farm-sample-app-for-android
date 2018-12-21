@@ -25,20 +25,20 @@ import android.widget.GridView;
 import com.amazonaws.devicefarm.android.referenceapp.Adapters.ImageGalleryAdapter;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * A fragment that demonstrates a root image gallery view
  */
 public class Native_ImageGalleryFragment extends Fragment {
-    @InjectView(R.id.native_image_grid_view)
+    @BindView(R.id.native_image_grid_view)
     GridView imageGalley;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.native_imagegallery_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         imageGalley.setAdapter(new ImageGalleryAdapter(getActivity()));
         return view;
     }
