@@ -15,14 +15,14 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Util;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -39,7 +39,7 @@ public class ScreenShot {
     private static final String DEVICE_FARM_ESPRESSO_SCREEN_DIRECTORY = "/test-screenshots/";
     private static final int SCREEN_SHOT_IMAGE_QUALITY = 100;
 
-    public static void take(Activity activity, String fileName) {
+    public static void take(AppCompatActivity activity, String fileName) {
         // Create the file path.
         final StringBuilder pathBuilder = new StringBuilder()
             .append(Environment.getExternalStorageDirectory().getAbsolutePath())
@@ -85,7 +85,7 @@ public class ScreenShot {
         }
     }
 
-    public static void take(Activity activity) {
+    public static void take(AppCompatActivity activity) {
         take(activity, UUID.randomUUID().toString());
     }
 }

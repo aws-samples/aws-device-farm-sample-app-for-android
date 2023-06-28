@@ -16,11 +16,11 @@
 package com.amazonaws.devicefarm.android.referenceapp;
 
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.annotation.UiThreadTest;
-import android.support.test.espresso.contrib.DrawerActions;
-import android.support.test.espresso.contrib.RecyclerViewActions;
-import android.test.ActivityInstrumentationTestCase2;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.annotation.UiThreadTest;
+import androidx.test.espresso.contrib.DrawerActions;
+import androidx.test.espresso.contrib.RecyclerViewActions;
+import androidx.test.rule.ActivityTestRule;
 
 import com.amazonaws.devicefarm.android.referenceapp.Activities.MainActivity;
 import com.amazonaws.devicefarm.android.referenceapp.Util.ScreenShot;
@@ -28,23 +28,23 @@ import com.amazonaws.devicefarm.android.referenceapp.Util.ScreenShot;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
-import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.not;
 
 /**
  * The base Espresso class for all the Espresso tests
  */
 @Ignore
-public abstract class BaseADFTest extends ActivityInstrumentationTestCase2<MainActivity> {
+public abstract class BaseADFTest extends ActivityTestRule<MainActivity> {
 
     public BaseADFTest() {
         super(MainActivity.class);
@@ -63,10 +63,8 @@ public abstract class BaseADFTest extends ActivityInstrumentationTestCase2<MainA
      *
      * @throws Exception instrumentation ActivityInstrumentationTestCase2 exception
      */
-    @Override
     protected void setUp() throws Exception {
         getActivity(); //IMPORTANT you must call this before your tests!
-        super.setUp();
         DrawerActions.openDrawer(R.id.drawer_layout);
         RecyclerViewActions.scrollTo(withText(getClassName()));
         onView(withId(R.id.drawerList)).perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(getClassName())), click()));
@@ -78,14 +76,12 @@ public abstract class BaseADFTest extends ActivityInstrumentationTestCase2<MainA
      *
      * @throws Exception
      */
-    @Override
     protected void tearDown() throws Exception {
         try {
             takeScreenShot();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        super.tearDown();
     }
 
     /**
@@ -144,7 +140,7 @@ public abstract class BaseADFTest extends ActivityInstrumentationTestCase2<MainA
      * @throws Throwable
      */
     protected void takeScreenShot() throws Throwable {
-        runTestOnUiThread(new Runnable() {
+        runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 ScreenShot.take(getActivity());

@@ -17,12 +17,12 @@ package com.amazonaws.devicefarm.android.referenceapp.Fragments;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +35,7 @@ import com.amazonaws.devicefarm.android.referenceapp.R;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 import static android.content.Context.*;
 
@@ -43,7 +43,7 @@ import static android.content.Context.*;
  * Fragment for the the navigation drawer
  */
 public class NavigationDrawerFragment extends Fragment {
-    @InjectView(R.id.drawerList)
+    @BindView(R.id.drawerList)
     RecyclerView recycleView;
 
     private DrawerAdapter drawerAdapter;
@@ -67,7 +67,7 @@ public class NavigationDrawerFragment extends Fragment {
         final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.app_name, R.string.app_name){
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
-                inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),0);//TODO utility?
+                inputMethodManager.hideSoftInputFromWindow(getView().getWindowToken(), 0);//TODO utility?
                 super.onDrawerSlide(drawerView, slideOffset);
             }
         };
@@ -89,7 +89,7 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        ButterKnife.inject(this, layout);
+        ButterKnife.bind(this, layout);
         return layout;
     }
 }

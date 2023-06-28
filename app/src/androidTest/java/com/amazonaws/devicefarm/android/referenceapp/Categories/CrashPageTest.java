@@ -15,7 +15,9 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Categories;
 
-import android.support.test.espresso.PerformException;
+import static junit.framework.TestCase.fail;
+
+import androidx.test.espresso.PerformException;
 
 import com.amazonaws.devicefarm.android.referenceapp.BaseADFTest;
 import com.amazonaws.devicefarm.android.referenceapp.R;

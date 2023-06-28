@@ -19,7 +19,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
@@ -30,7 +30,7 @@ import android.view.ViewGroup;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * A fragment that demos a camera preview
@@ -40,7 +40,7 @@ public class Native_CameraFragment extends Fragment implements SurfaceHolder.Cal
 
     Camera camera;
 
-    @InjectView(R.id.camera_surface_view)
+    @BindView(R.id.camera_surface_view)
     SurfaceView surfaceView;
 
     private SurfaceHolder surfaceHolder;
@@ -48,7 +48,7 @@ public class Native_CameraFragment extends Fragment implements SurfaceHolder.Cal
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.native_camera_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);

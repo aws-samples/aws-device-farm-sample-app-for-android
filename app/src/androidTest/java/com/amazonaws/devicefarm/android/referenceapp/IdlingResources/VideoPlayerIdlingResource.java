@@ -15,7 +15,7 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.IdlingResources;
 
-import android.support.test.espresso.IdlingResource;
+import androidx.test.espresso.IdlingResource;
 import android.widget.VideoView;
 
 /**

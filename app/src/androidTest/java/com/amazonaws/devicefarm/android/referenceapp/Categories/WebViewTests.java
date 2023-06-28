@@ -15,7 +15,7 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Categories;
 
-import android.support.test.espresso.Espresso;
+import androidx.test.espresso.Espresso;
 import android.webkit.WebView;
 
 import com.amazonaws.devicefarm.android.referenceapp.BaseADFTest;
@@ -24,12 +24,12 @@ import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import org.junit.Test;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
@@ -48,7 +48,7 @@ public class WebViewTests extends BaseADFTest{
     protected void setUp() throws Exception {
         super.setUp();
         try {
-            runTestOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     webViewIdlingResource = new WebViewIdlingResource((WebView) getActivity().findViewById(R.id.webView_browser));

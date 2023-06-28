@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Inputs;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,23 +27,23 @@ import android.widget.TextView;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * A fragment demonstrating radio button input
  */
 public class Input_RadioButtonFragment extends Fragment implements RadioGroup.OnCheckedChangeListener{
-    @InjectView(R.id.radio_button_group)
+    @BindView(R.id.radio_button_group)
     RadioGroup radioGroup;
 
-    @InjectView(R.id.input_radio_button_display)
+    @BindView(R.id.input_radio_button_display)
     TextView radioButtonDisplay;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_radio_button_fragment, container, false);
-        ButterKnife.inject(this,view);
+        ButterKnife.bind(this,view);
         radioGroup.setOnCheckedChangeListener(this);
         radioButtonDisplay.setText(getString(R.string.radio_button_1));
         return view;

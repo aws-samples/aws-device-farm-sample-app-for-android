@@ -33,7 +33,7 @@
     <style name="ADFButton" >
         <item name="android:minWidth">50dp</item>
         <item name="android:minHeight">20dp</item>
-        <item name="android:background">@color/custom_dark_blue</item>
+        <item name="background">@color/custom_dark_blue</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/small_font_size</item>
         <item name="android:padding">4dp</item>

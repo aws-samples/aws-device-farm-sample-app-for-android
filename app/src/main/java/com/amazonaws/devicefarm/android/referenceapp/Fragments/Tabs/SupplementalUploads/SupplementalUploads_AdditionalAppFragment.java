@@ -15,7 +15,7 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.SupplementalUploads;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 public class SupplementalUploads_AdditionalAppFragment extends Fragment {
 }
