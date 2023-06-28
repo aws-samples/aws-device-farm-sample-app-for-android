@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,21 +27,21 @@ import android.widget.EditText;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 
 public class LocalWebView extends Fragment {
 
-    @InjectView(R.id.website_input)
+    @BindView(R.id.website_input)
     EditText websiteInput;
 
-    @InjectView(R.id.webView_browser)
+    @BindView(R.id.webView_browser)
     WebView webView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.web_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         websiteInput.setVisibility(View.GONE);
         setUpWebView();
         return view;

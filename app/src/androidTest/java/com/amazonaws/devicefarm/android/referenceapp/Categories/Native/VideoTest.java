@@ -15,7 +15,7 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Categories.Native;
 
-import android.support.test.espresso.Espresso;
+import androidx.test.espresso.Espresso;
 import android.widget.VideoView;
 
 import com.amazonaws.devicefarm.android.referenceapp.IdlingResources.VideoPlayerIdlingResource;

@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Inputs;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,22 +28,22 @@ import android.widget.TextView;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * A fragment representing a spinner input
  */
 public class Input_SpinnerFragment extends Fragment implements Spinner.OnItemSelectedListener{
-    @InjectView(R.id.input_spinner)
+    @BindView(R.id.input_spinner)
     Spinner spinner;
 
-    @InjectView(R.id.input_spinner_message)
+    @BindView(R.id.input_spinner_message)
     TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_spinner_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         spinnerAdapter();
         spinner.setOnItemSelectedListener(this);
         return view;

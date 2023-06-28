@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Inputs;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -29,22 +29,22 @@ import com.amazonaws.devicefarm.android.referenceapp.Adapters.GestureListener;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * Fragment demonstrating a touch inputs
  */
 public class Input_GestureFragment extends Fragment{
-    @InjectView(R.id.input_gesture_action_pad)
+    @BindView(R.id.input_gesture_action_pad)
     FrameLayout actionPad;
 
-    @InjectView(R.id.input_gesture_content)
+    @BindView(R.id.input_gesture_content)
     TextView gestureContent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.input_gesture_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         actionPad.setClickable(true);
         actionPad.setFocusable(true);
 

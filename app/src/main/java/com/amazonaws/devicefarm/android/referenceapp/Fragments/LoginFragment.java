@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +28,7 @@ import android.widget.TextView;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -44,32 +44,32 @@ public class LoginFragment extends Fragment {
     private String ALT_BUTTON_SUCCESS_TITLE;
     private InputMethodManager imm;
 
-    @InjectView(R.id.login_main_view)
+    @BindView(R.id.login_main_view)
     View mainView;
 
-    @InjectView(R.id.login_alt_view)
+    @BindView(R.id.login_alt_view)
     View altView;
 
-    @InjectView(R.id.username_text_input)
+    @BindView(R.id.username_text_input)
     EditText usernameInput;
 
-    @InjectView(R.id.password_text_input)
+    @BindView(R.id.password_text_input)
     EditText passwordInput;
 
-    @InjectView(R.id.login_button)
+    @BindView(R.id.login_button)
     Button loginButton;
 
-    @InjectView(R.id.login_alt_message_textView)
+    @BindView(R.id.login_alt_message_textView)
     TextView altText;
 
-    @InjectView(R.id.alt_button)
+    @BindView(R.id.alt_button)
     Button altButton;
 
     public LoginFragment(){}
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_login, container, false);
-        ButterKnife.inject(this,view);
+        ButterKnife.bind(this,view);
 
         USERNAME = getString(R.string.login_username);
         PASSWORD = getString(R.string.login_password);

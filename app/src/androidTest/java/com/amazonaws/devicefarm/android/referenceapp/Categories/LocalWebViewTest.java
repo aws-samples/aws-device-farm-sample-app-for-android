@@ -15,23 +15,23 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Categories;
 
-import android.support.test.espresso.web.webdriver.Locator;
+import androidx.test.espresso.web.webdriver.Locator;
 
 import com.amazonaws.devicefarm.android.referenceapp.BaseADFTest;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
 
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static android.support.test.espresso.web.assertion.WebViewAssertions.webContent;
-import static android.support.test.espresso.web.assertion.WebViewAssertions.webMatches;
-import static android.support.test.espresso.web.matcher.DomMatchers.hasElementWithId;
-import static android.support.test.espresso.web.matcher.DomMatchers.withTextContent;
-import static android.support.test.espresso.web.sugar.Web.onWebView;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.clearElement;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.findElement;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.getText;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.webKeys;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.web.assertion.WebViewAssertions.webContent;
+import static androidx.test.espresso.web.assertion.WebViewAssertions.webMatches;
+import static androidx.test.espresso.web.matcher.DomMatchers.hasElementWithId;
+import static androidx.test.espresso.web.matcher.DomMatchers.withTextContent;
+import static androidx.test.espresso.web.sugar.Web.onWebView;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.clearElement;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.findElement;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.getText;
+import static androidx.test.espresso.web.webdriver.DriverAtoms.webKeys;
 import static org.hamcrest.CoreMatchers.containsString;
 
 

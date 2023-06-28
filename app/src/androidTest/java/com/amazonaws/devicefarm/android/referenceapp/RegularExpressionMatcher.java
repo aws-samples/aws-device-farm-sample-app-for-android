@@ -15,15 +15,15 @@
 
 package com.amazonaws.devicefarm.android.referenceapp;
 
-import android.support.test.espresso.matcher.BoundedMatcher;
+import androidx.test.espresso.matcher.BoundedMatcher;
 import android.view.View;
 import android.widget.TextView;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkArgument;
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
+import static androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkArgument;
+import static androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull;
 import static org.hamcrest.CoreMatchers.is;
 
 /**

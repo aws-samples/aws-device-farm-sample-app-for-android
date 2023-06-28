@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
     android:background="?attr/selectableItemBackground">
@@ -9,7 +10,7 @@
         android:id="@+id/drawer_row_icon"
         android:layout_marginLeft="@dimen/list_icon_left_margin"
         android:layout_gravity="center_vertical"
-        android:src="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/ic_launcher"
         android:contentDescription="Row Category Image"/>
     <TextView
         android:layout_width="wrap_content"
