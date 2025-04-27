@@ -41,10 +41,10 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * <h1>Main acitivity</h1>
+ * <h1>Main activity</h1>
  *
  * <p>
- *     This acitivty holds the navigation drawer
+ *     This activity holds the navigation drawer
  *     and all of the navigation fragments.
  * </p>
  */

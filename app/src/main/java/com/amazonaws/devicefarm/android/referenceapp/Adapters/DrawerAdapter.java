@@ -34,7 +34,7 @@ import butterknife.InjectView;
 
 /**
  * <h1>Navigation Drawer Adapter</h1>
- * <p>A adapter for the navigation drawer which initalizes the rows of the drawer</p>
+ * <p>A adapter for the navigation drawer which initializes the rows of the drawer</p>
  */
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder>{
     private final List<DrawerCategoryModel> data;

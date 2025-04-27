@@ -32,7 +32,7 @@ import butterknife.OnClick;
 /**
  * <h1>Up Navigation Activity</h1>
  * <p>
- *     An activity demonstating Up navigation
+ *     An activity demonstrating Up navigation
  * </p>
  */
 public class UpNavigationActivity extends AppCompatActivity {

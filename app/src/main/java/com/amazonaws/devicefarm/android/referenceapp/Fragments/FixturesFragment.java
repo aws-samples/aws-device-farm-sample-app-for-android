@@ -83,7 +83,7 @@ public class FixturesFragment extends Fragment implements
                 if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
                     updateBluetoothStatusDisplay();
                 } else if (action.equals(ConnectivityManager.CONNECTIVITY_ACTION)) {
-                    updateWifiStatusDisplay();
+                    updateWiFiStatusDisplay();
                 } else if (action.equals(LocationManager.PROVIDERS_CHANGED_ACTION)) {
                     updateGPSStatusDisplay();
                 } else if (action.equals(NfcAdapter.ACTION_ADAPTER_STATE_CHANGED)) {
@@ -101,7 +101,7 @@ public class FixturesFragment extends Fragment implements
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         filter.addAction(LocationManager.PROVIDERS_CHANGED_ACTION);
 
-        updateWifiStatusDisplay();
+        updateWiFiStatusDisplay();
         updateBluetoothStatusDisplay();
         updateGPSStatusDisplay();
         updateNFCStatusDisplay();
@@ -132,11 +132,11 @@ public class FixturesFragment extends Fragment implements
     }
 
     /**
-     * Updates the Wifi status
+     * Updates the WiFi status
      */
-    private void updateWifiStatusDisplay() {
+    private void updateWiFiStatusDisplay() {
         final WifiManager wifiManager = (WifiManager)getActivity().getSystemService(Context.WIFI_SERVICE);
-        wifi.setText(Boolean.toString(wifiManager.isWifiEnabled()));
+        wifi.setText(Boolean.toString(wifiManager.isWiFiEnabled()));
     }
 
     /**

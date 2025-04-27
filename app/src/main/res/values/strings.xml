@@ -76,7 +76,7 @@
     <string name="default_location_text">Finding Location</string>
     <string name="Latitude_text_label">Lat:</string>
     <string name="longitude_text_label">Long:</string>
-    <string name="wifi_text_label">Wifi:</string>
+    <string name="wifi_text_label">WiFi:</string>
     <string name="bluetooth_text_label">Bluetooth:</string>
     <string name="gps_text_label">GPS:</string>
     <string name="nfc_text_label">NFC:</string>

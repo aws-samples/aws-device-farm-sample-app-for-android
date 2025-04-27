@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * A fragment used to demonstrate notications
+ * A fragment used to demonstrate notifications
  */
 public class NotificationsFragment extends Fragment {
 

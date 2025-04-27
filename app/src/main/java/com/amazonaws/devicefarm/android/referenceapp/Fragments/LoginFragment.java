@@ -84,7 +84,7 @@ public class LoginFragment extends Fragment {
     }
 
     /**
-     * Checks if username and passwork are correct
+     * Checks if username and password are correct
      */
     @OnClick(R.id.login_button)
     public void loginButtonPressed(){

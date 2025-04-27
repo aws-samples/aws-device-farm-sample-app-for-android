@@ -56,7 +56,7 @@ public class LoginPageTest extends BaseADFTest {
     }
 
     /**
-     * Attemps to log into the form
+     * Attempts to log into the form
      *
      * @param user the username
      * @param pass the password

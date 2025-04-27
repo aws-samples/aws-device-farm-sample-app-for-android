@@ -40,7 +40,7 @@ import butterknife.InjectView;
 import static android.content.Context.*;
 
 /**
- * Fragment for the the navigation drawer
+ * Fragment for the navigation drawer
  */
 public class NavigationDrawerFragment extends Fragment {
     @InjectView(R.id.drawerList)
