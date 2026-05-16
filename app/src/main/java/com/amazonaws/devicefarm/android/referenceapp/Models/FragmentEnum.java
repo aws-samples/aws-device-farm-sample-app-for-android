@@ -16,7 +16,7 @@
 package com.amazonaws.devicefarm.android.referenceapp.Models;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.FixturesFragment;
 import com.amazonaws.devicefarm.android.referenceapp.Fragments.LocalWebView;

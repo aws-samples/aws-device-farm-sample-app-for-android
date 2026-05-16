@@ -1,11 +1,19 @@
 # AWS Device Farm Sample App for Android
+
 This is a sample native Android app that contains many of the stock Android components and elements, along with example [Appium](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app), [Calabash](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app), and [Espresso](https://github.com/awslabs/aws-device-farm-sample-app-for-android#strategies-for-espresso) tests. You can use the app and example tests as a reference for your own AWS Device Farm test scripts.
 
 #### Notes
 This project uses [Butterknife](http://jakewharton.github.io/butterknife/) in order to create Android views and view listeners through annotations.
 
 ## Getting Started
-In order to run this app on Device Farm, you will first need to create a local copy of this repository, [open](https://github.com/dogriffiths/HeadFirstAndroid/wiki/How-to-open-a-project-in-Android-Studio) the project, and then [build](https://developer.android.com/training/basics/firstapp/index.html) the APK from the source.
+In order to run this app on Device Farm, you will first need to create a local copy of this repository, [open](https://developer.android.com/studio/projects/create-project) the project in Android Studio, and then [build](https://developer.android.com/studio/run) the APK from the source.
+
+Alternatively, a pre-built APK is available in the `prebuilt/` directory.
+
+**Requirements:**
+- Android SDK 34+
+- Java 17
+- Gradle 8.4+
 
 ## Examples for Testing Specific Scenarios
 |Component |App Implementation| Espresso | Calabash | Appium |
@@ -21,7 +29,6 @@ In order to run this app on Device Farm, you will first need to create a local c
 ## Examples for Native Features
 |Feature |Android Implementation| Espresso| Calabash | Appium |
 |--------|----------------------|---------|----------|--------|
-|[Camera](http://developer.android.com/guide/topics/media/camera.html)  |[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/main/java/com/amazonaws/devicefarm/android/referenceapp/Fragments/Tabs/Native/Native_CameraFragment.java) |[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/androidTest/java/com/amazonaws/devicefarm/android/referenceapp/Categories/Native/CameraPreviewTest.java) |[source code](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app/blob/master/features/step_definitions/steps/native_components.rb) |[source code](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app/blob/master/src/test/java/Tests/Native/CameraTest.java)|
 |[Image Collection Grid](http://developer.android.com/guide/topics/ui/layout/gridview.html)|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/main/java/com/amazonaws/devicefarm/android/referenceapp/Fragments/Tabs/Native/Native_ImageGalleryFragment.java)|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/androidTest/java/com/amazonaws/devicefarm/android/referenceapp/Categories/Native/ImageCollectionTest.java)|[source code](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app/blob/master/features/step_definitions/steps/native_components.rb)|[source code](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app/blob/master/src/test/java/Tests/Native/ImageGalleryTest.java)|
 |[Scroll View](http://developer.android.com/reference/android/widget/ScrollView.html)|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/main/res/layout/native_content_scrolling.xml)|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/androidTest/java/com/amazonaws/devicefarm/android/referenceapp/Categories/Native/ScrollingContentTest.java)|[source code](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app/blob/master/features/step_definitions/steps/native_components.rb)|[source code](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app/blob/master/src/test/java/Tests/Native/ScrollViewTest.java)|
 |Out of View Content|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/main/res/layout/native_out_of_view_scrolling.xml)|[source code](https://github.com/awslabs/aws-device-farm-sample-app-for-android/blob/master/app/src/androidTest/java/com/amazonaws/devicefarm/android/referenceapp/Categories/Native/OutOfContentScrollingTest.java)|[source code](https://github.com/awslabs/aws-device-farm-calabash-tests-for-sample-app/blob/master/features/step_definitions/steps/native_components.rb)|[source code](https://github.com/awslabs/aws-device-farm-appium-tests-for-sample-app/blob/master/src/test/java/Tests/Native/OutOfViewTest.java)|

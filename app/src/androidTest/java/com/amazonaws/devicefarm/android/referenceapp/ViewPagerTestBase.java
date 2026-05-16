@@ -15,17 +15,17 @@
 
 package com.amazonaws.devicefarm.android.referenceapp;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.Espresso;
-import android.support.v4.view.ViewPager;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.espresso.Espresso;
+import androidx.viewpager.widget.ViewPager;
 
 import com.amazonaws.devicefarm.android.referenceapp.IdlingResources.ViewPagerIdlingResource;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.swipeLeft;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.swipeLeft;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static junit.framework.Assert.fail;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.Is.is;

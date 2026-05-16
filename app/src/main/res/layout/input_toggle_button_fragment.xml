@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:id="@+id/toggle_background">
 
-    <android.support.v7.widget.SwitchCompat
+    <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textOn="@string/switch_on_text"
         android:textOff="@string/switch_off_text"
+        android:showText="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/mid_margin"
         android:id="@+id/input_switch"

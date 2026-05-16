@@ -66,7 +66,7 @@ public class ImageGalleryAdapter extends BaseAdapter {
         else{
             imageView = (ImageView) convertView;
         }
-        Picasso.with(context).load(galleryIds.getResourceId(position, -1)).resize(300,300).into(imageView);
+        Picasso.get().load(galleryIds.getResourceId(position, -1)).resize(300,300).into(imageView);
         return imageView;
     }
 }
