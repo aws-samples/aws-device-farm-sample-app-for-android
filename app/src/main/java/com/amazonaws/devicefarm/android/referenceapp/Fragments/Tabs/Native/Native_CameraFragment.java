@@ -15,11 +15,17 @@
 
 package com.amazonaws.devicefarm.android.referenceapp.Fragments.Tabs.Native;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CaptureRequest;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
@@ -27,85 +33,156 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
+import java.util.Collections;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
- * A fragment that demos a camera preview
+ * A fragment that demos a camera preview using Camera2 API
  */
-public class Native_CameraFragment extends Fragment implements SurfaceHolder.Callback{
-    public final String CAMERA_FRAGMENT_TAG = "CAMERA_FRAGMENT";
+public class Native_CameraFragment extends Fragment implements SurfaceHolder.Callback {
+    private static final String TAG = "CAMERA_FRAGMENT";
 
-    Camera camera;
-
-    @InjectView(R.id.camera_surface_view)
+    @BindView(R.id.camera_surface_view)
     SurfaceView surfaceView;
 
-    private SurfaceHolder surfaceHolder;
+    private CameraDevice cameraDevice;
+    private CameraCaptureSession captureSession;
+    private HandlerThread backgroundThread;
+    private Handler backgroundHandler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.native_camera_fragment, container, false);
-        ButterKnife.inject(this, view);
-        surfaceHolder = surfaceView.getHolder();
-        surfaceHolder.addCallback(this);
-        surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        ButterKnife.bind(this, view);
+        surfaceView.getHolder().addCallback(this);
         return view;
-    }
-
-    private boolean hasCamera(Context ctx){
-        return ctx.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        try {
-            camera = Camera.open();
-            camera.setDisplayOrientation(90);
-            Camera.Parameters parameters = camera.getParameters();
-            camera.setParameters(parameters);
-            camera.setPreviewDisplay(surfaceHolder);
-            camera.startPreview();
-            surfaceView.setContentDescription(getString(R.string.camera_preview_on));
-        } catch (Exception e) {
-            Log.e(CAMERA_FRAGMENT_TAG, String.valueOf(e));
+        startBackgroundThread();
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
+        } else {
+            openCamera();
         }
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        refreshCamera();
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        try {
-            camera.stopPreview();
-            camera.release();
-            camera = null;
-        } catch (Exception e) {
-            Log.e(CAMERA_FRAGMENT_TAG, String.valueOf(e));
-        }
+        closeCamera();
+        stopBackgroundThread();
     }
 
-    private void refreshCamera () {
-        if (surfaceHolder.getSurface() == null) {
+    private void openCamera() {
+        Context ctx = getActivity();
+        if (ctx == null) return;
+
+        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            Log.w(TAG, "Camera permission not granted");
             return;
         }
 
+        CameraManager manager = (CameraManager) ctx.getSystemService(Context.CAMERA_SERVICE);
         try {
-            camera.stopPreview();
-        } catch (Exception e) {
-            Log.e(CAMERA_FRAGMENT_TAG, String.valueOf(e));
+            String cameraId = manager.getCameraIdList()[0];
+            manager.openCamera(cameraId, new CameraDevice.StateCallback() {
+                @Override
+                public void onOpened(@NonNull CameraDevice camera) {
+                    cameraDevice = camera;
+                    startPreview();
+                }
+
+                @Override
+                public void onDisconnected(@NonNull CameraDevice camera) {
+                    camera.close();
+                    cameraDevice = null;
+                }
+
+                @Override
+                public void onError(@NonNull CameraDevice camera, int error) {
+                    camera.close();
+                    cameraDevice = null;
+                    Log.e(TAG, "Camera error: " + error);
+                }
+            }, backgroundHandler);
+        } catch (CameraAccessException | SecurityException e) {
+            Log.e(TAG, "Failed to open camera", e);
         }
+    }
+
+    private void startPreview() {
+        if (cameraDevice == null || !surfaceView.getHolder().getSurface().isValid()) return;
 
         try {
-            camera.setPreviewDisplay(surfaceHolder);
-            camera.startPreview();
-        } catch (Exception e) {
-            Log.e(CAMERA_FRAGMENT_TAG, String.valueOf(e));
+            CaptureRequest.Builder builder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+            builder.addTarget(surfaceView.getHolder().getSurface());
+
+            cameraDevice.createCaptureSession(
+                Collections.singletonList(surfaceView.getHolder().getSurface()),
+                new CameraCaptureSession.StateCallback() {
+                    @Override
+                    public void onConfigured(@NonNull CameraCaptureSession session) {
+                        captureSession = session;
+                        try {
+                            session.setRepeatingRequest(builder.build(), null, backgroundHandler);
+                            surfaceView.setContentDescription(getString(R.string.camera_preview_on));
+                        } catch (CameraAccessException e) {
+                            Log.e(TAG, "Failed to start preview", e);
+                        }
+                    }
+
+                    @Override
+                    public void onConfigureFailed(@NonNull CameraCaptureSession session) {
+                        Log.e(TAG, "Camera configuration failed");
+                    }
+                },
+                backgroundHandler
+            );
+        } catch (CameraAccessException e) {
+            Log.e(TAG, "Failed to create capture session", e);
+        }
+    }
+
+    private void closeCamera() {
+        if (captureSession != null) {
+            captureSession.close();
+            captureSession = null;
+        }
+        if (cameraDevice != null) {
+            cameraDevice.close();
+            cameraDevice = null;
+        }
+    }
+
+    private void startBackgroundThread() {
+        backgroundThread = new HandlerThread("CameraBackground");
+        backgroundThread.start();
+        backgroundHandler = new Handler(backgroundThread.getLooper());
+    }
+
+    private void stopBackgroundThread() {
+        if (backgroundThread != null) {
+            backgroundThread.quitSafely();
+            try {
+                backgroundThread.join();
+            } catch (InterruptedException e) {
+                Log.e(TAG, "Background thread interrupted", e);
+            }
+            backgroundThread = null;
+            backgroundHandler = null;
         }
     }
 }

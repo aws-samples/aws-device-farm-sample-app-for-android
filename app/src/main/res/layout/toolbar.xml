@@ -1,4 +1,4 @@
-<android.support.v7.widget.Toolbar
+<androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toolbar"
     android:layout_height="wrap_content"
@@ -14,4 +14,4 @@
         android:layout_gravity="center"
         android:id="@+id/toolbar_title"
         android:contentDescription="toolbar title"/>
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>

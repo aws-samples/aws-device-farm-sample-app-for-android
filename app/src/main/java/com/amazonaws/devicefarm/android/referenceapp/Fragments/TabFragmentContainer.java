@@ -16,8 +16,8 @@
 package com.amazonaws.devicefarm.android.referenceapp.Fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +29,7 @@ import com.amazonaws.devicefarm.android.referenceapp.R;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * A fragment container for fragments with tabs
@@ -37,7 +37,7 @@ import butterknife.InjectView;
  */
 public class TabFragmentContainer extends Fragment {
 
-    @InjectView(R.id.view_pager1)
+    @BindView(R.id.view_pager1)
     ViewPager pager;
 
     public TabFragmentContainer() {}
@@ -45,7 +45,7 @@ public class TabFragmentContainer extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {//TODO SINGLETON or single instance?
         View view =  inflater.inflate(R.layout.tab_fragment_container, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 

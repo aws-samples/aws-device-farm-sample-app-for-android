@@ -18,9 +18,9 @@ package com.amazonaws.devicefarm.android.referenceapp.Categories;
 import com.amazonaws.devicefarm.android.referenceapp.BaseADFTest;
 import com.amazonaws.devicefarm.android.referenceapp.R;
 
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Tests for a static homepage

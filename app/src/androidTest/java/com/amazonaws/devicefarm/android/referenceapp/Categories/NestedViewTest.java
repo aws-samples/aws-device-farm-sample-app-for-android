@@ -20,7 +20,7 @@ import com.amazonaws.devicefarm.android.referenceapp.R;
 
 import org.junit.Test;
 
-import static android.support.test.espresso.Espresso.pressBack;
+import static androidx.test.espresso.Espresso.pressBack;
 
 /**
  * Tests for nested views
